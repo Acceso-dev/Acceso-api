@@ -1,0 +1,150 @@
+/**
+ * Application Constants
+ */
+
+// API Error Codes
+const ERROR_CODES = {
+  // Authentication
+  UNAUTHORIZED: 'UNAUTHORIZED',
+  INVALID_API_KEY: 'INVALID_API_KEY',
+  API_KEY_EXPIRED: 'API_KEY_EXPIRED',
+  API_KEY_REVOKED: 'API_KEY_REVOKED',
+
+  // Rate Limiting
+  RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',
+
+  // Validation
+  VALIDATION_ERROR: 'VALIDATION_ERROR',
+  INVALID_INPUT: 'INVALID_INPUT',
+  MISSING_REQUIRED_FIELD: 'MISSING_REQUIRED_FIELD',
+
+  // Resources
+  NOT_FOUND: 'NOT_FOUND',
+  RESOURCE_NOT_FOUND: 'RESOURCE_NOT_FOUND',
+  ALREADY_EXISTS: 'ALREADY_EXISTS',
+
+  // Server
+  INTERNAL_ERROR: 'INTERNAL_ERROR',
+  SERVICE_UNAVAILABLE: 'SERVICE_UNAVAILABLE',
+  NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
+  BAD_GATEWAY: 'BAD_GATEWAY',
+
+  // Solana
+  RPC_ERROR: 'RPC_ERROR',
+  INVALID_ADDRESS: 'INVALID_ADDRESS',
+  INVALID_SIGNATURE: 'INVALID_SIGNATURE',
+  TRANSACTION_FAILED: 'TRANSACTION_FAILED',
+
+  // Workflow
+  WORKFLOW_EXECUTION_FAILED: 'WORKFLOW_EXECUTION_FAILED',
+  WORKFLOW_TIMEOUT: 'WORKFLOW_TIMEOUT',
+  WORKFLOW_DISABLED: 'WORKFLOW_DISABLED',
+
+  // ZK Proof
+  PROOF_GENERATION_FAILED: 'PROOF_GENERATION_FAILED',
+  PROOF_VERIFICATION_FAILED: 'PROOF_VERIFICATION_FAILED',
+  INVALID_CIRCUIT: 'INVALID_CIRCUIT',
+
+  // Webhook
+  WEBHOOK_DELIVERY_FAILED: 'WEBHOOK_DELIVERY_FAILED',
+  WEBHOOK_TIMEOUT: 'WEBHOOK_TIMEOUT',
+};
+
+// HTTP Status Codes
+const HTTP_STATUS = {
+  OK: 200,
+  CREATED: 201,
+  NO_CONTENT: 204,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  CONFLICT: 409,
+  UNPROCESSABLE_ENTITY: 422,
+  TOO_MANY_REQUESTS: 429,
+  INTERNAL_ERROR: 500,
+  BAD_GATEWAY: 502,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504,
+};
+
+// Cache TTL (in seconds)
+const CACHE_TTL = {
+  // Solana
+  BALANCE: 5,
+  ACCOUNT_INFO: 5,
+  TRANSACTION: 30,
+  BLOCK: 60,
+  SLOT: 0, // No caching
+
+  // Polymarket
+  MARKET_LIST: 300,
+  MARKET_DETAILS: 60,
+  MARKET_PRICE: 5,
+  ORDERBOOK: 2,
+
+  // General
+  API_KEY: 300,
+  RATE_LIMIT: 60,
+  SESSION: 3600,
+};
+
+// Rate Limit Tiers
+const RATE_LIMIT_TIERS = {
+  FREE: {
+    requests: 100,
+    windowMs: 60000,
+  },
+  BASIC: {
+    requests: 500,
+    windowMs: 60000,
+  },
+  PRO: {
+    requests: 2000,
+    windowMs: 60000,
+  },
+  ENTERPRISE: {
+    requests: 10000,
+    windowMs: 60000,
+  },
+};
+
+// Webhook Retry Delays (in ms)
+const WEBHOOK_RETRY_DELAYS = [5000, 15000, 45000];
+
+// Workflow Triggers
+const WORKFLOW_TRIGGERS = {
+  MANUAL: 'manual',
+  SCHEDULE: 'schedule',
+  WEBHOOK: 'webhook',
+  PRICE_THRESHOLD: 'price_threshold',
+  ACCOUNT_CHANGE: 'account_change',
+  TRANSACTION: 'transaction',
+};
+
+// Workflow Actions
+const WORKFLOW_ACTIONS = {
+  WEBHOOK: 'webhook',
+  EMAIL: 'email',
+  SOLANA_TRANSFER: 'solana_transfer',
+  SOLANA_INSTRUCTION: 'solana_instruction',
+  HTTP_REQUEST: 'http_request',
+};
+
+// Solana Networks
+const SOLANA_NETWORKS = {
+  MAINNET: 'mainnet-beta',
+  TESTNET: 'testnet',
+  DEVNET: 'devnet',
+};
+
+module.exports = {
+  ERROR_CODES,
+  HTTP_STATUS,
+  CACHE_TTL,
+  RATE_LIMIT_TIERS,
+  WEBHOOK_RETRY_DELAYS,
+  WORKFLOW_TRIGGERS,
+  WORKFLOW_ACTIONS,
+  SOLANA_NETWORKS,
+};

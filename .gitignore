@@ -1,0 +1,79 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.*
+.env.local
+.env.*.local
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+*.lcov
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# ZK Proof files (large)
+*.zkey
+*.ptau
+*.r1cs
+
+# Secrets (never commit)
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# API Keys & Credentials
+credentials/
+**/credentials.*
+*.credentials
+api-keys.json
+secrets.json
+
+# Data folder (test responses, cached data)
+data/
+test-responses/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Prisma
+/src/generated/prisma
